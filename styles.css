@@ -16,56 +16,38 @@ header, footer {
     padding: 20px;
 }
 
-header nav ul {
-    list-style-type: none;
-}
-
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.contact-info {
-    margin-top: 10px;
-    color: #fff;
-}
-
-section {
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-}
-
-section h2 {
-    color: #333;
-}
-
-section p {
-    color: #555;
-}
-
+header nav ul,
 footer nav ul {
     list-style-type: none;
 }
 
+header nav ul li,
 footer nav ul li {
     display: inline;
     margin-right: 20px;
 }
 
-.social-media img {
-    width: 30px;
-    margin-right: 10px;
+header nav ul li a,
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info,
+.social-media {
+    color: #fff;
 }
 
 .logo img {
     height: 150px;
+}
+
+.product-item img,
+.highlight-item img,
+.testimonial img,
+.social-media img { 
+    width: 15px; 
+    margin-right: 5px; 
 }
 
 .product-item {
@@ -110,7 +92,7 @@ footer nav ul li {
 }
 
 .highlight-item img {
-    height: 150px; 
+    height: 150px;
     width: auto;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -161,4 +143,92 @@ footer nav ul li {
 
 .blog-post a:hover {
     text-decoration: underline;
+}
+
+
+
+.product-items {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    margin-bottom: 20px; 
+}
+
+.product-item {
+    width: calc(20% - 20px); 
+    margin-bottom: 20px; 
+}
+
+.product-item img {
+    width: 100%; 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+
+.social-media img {
+    width: 30px; 
+    margin-right: 10px;
+}
+
+
+header nav ul li a:hover,
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-media a:hover img {
+    opacity: 0.7; 
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-media a:hover img {
+    opacity: 0.7;
+}
+
+.highlight-item {
+    transition: transform 0.3s ease-in-out;
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px); 
+}
+
+.highlight-item:active {
+    transform: translateY(5px); 
+}
+
+.product-item {
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-item:hover {
+    transform: translateY(-5px); 
+}
+
+.product-item:active {
+    transform: translateY(5px); 
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    header nav ul li,
+    footer nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .logo img {
+        height: 100px;
+    }
+
+    .social-media img {
+        width: 15px;
+    }
 }
