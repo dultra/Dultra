@@ -8,12 +8,15 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f9f9f9;
+    margin: 20px;
 }
 
-header, footer {
+header,
+footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 header nav ul,
@@ -45,9 +48,9 @@ footer nav ul li a {
 .product-item img,
 .highlight-item img,
 .testimonial img,
-.social-media img { 
-    width: 15px; 
-    margin-right: 5px; 
+.social-media img {
+    width: 15px;
+    margin-right: 5px;
 }
 
 .product-item {
@@ -57,6 +60,7 @@ footer nav ul li a {
 
 .product-item img {
     width: 100%;
+    max-width: 200px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -81,8 +85,8 @@ footer nav ul li a {
 
 .highlight-container {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .highlight-item {
@@ -125,15 +129,18 @@ footer nav ul li a {
 
 .blog-post {
     margin-bottom: 30px;
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
 }
 
 .blog-post h3 {
     color: #333;
+    margin-bottom: 10px;
 }
 
 .blog-post p {
     color: #666;
+    margin-bottom: 10px;
 }
 
 .blog-post a {
@@ -145,34 +152,14 @@ footer nav ul li a {
     text-decoration: underline;
 }
 
-
-
-.product-items {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    margin-bottom: 20px; 
+.blog-post:last-child {
+    border-bottom: none;
 }
-
-.product-item {
-    width: calc(20% - 20px); 
-    margin-bottom: 20px; 
-}
-
-.product-item img {
-    width: 100%; 
-    max-width: 100%; 
-    height: auto; 
-    border-radius: 10px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-}
-
 
 .social-media img {
-    width: 30px; 
+    width: 30px;
     margin-right: 10px;
 }
-
 
 header nav ul li a:hover,
 footer nav ul li a:hover {
@@ -180,7 +167,7 @@ footer nav ul li a:hover {
 }
 
 .social-media a:hover img {
-    opacity: 0.7; 
+    opacity: 0.7;
 }
 
 footer nav ul li a:hover {
@@ -196,11 +183,11 @@ footer nav ul li a:hover {
 }
 
 .highlight-item:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
 }
 
 .highlight-item:active {
-    transform: translateY(5px); 
+    transform: translateY(5px);
 }
 
 .product-item {
@@ -208,16 +195,150 @@ footer nav ul li a:hover {
 }
 
 .product-item:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
 }
 
 .product-item:active {
-    transform: translateY(5px); 
+    transform: translateY(5px);
+}
+
+.product-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-item {
+    width: calc(20% - 20px);
+    margin-bottom: 20px;
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 150px;
+    margin-top: 20px;
+}
+
+.service {
+    margin-bottom: 30px;
+}
+
+.testimonial {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.testimonial-content {
+    flex: 1;
+}
+
+.testimonial-image {
+    margin-right: 1250px;
+}
+
+.testimonial-content {
+    flex: 1;
+}
+
+.client-name {
+    font-style: italic;
+    color: #777;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.about-description,
+.team {
+    flex-basis: 48%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team {
+    background-color: #e0f2f1;
+}
+
+.about-description h3,
+.team h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.about-description p,
+.team p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.team p {
+    color: #333;
+}
+
+.about-description ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.about-description ul li::before {
+    content: '\2022';
+    color: #17a2b8;
+    font-size: 20px;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+footer {
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media {
+    margin-right: auto;
+}
+
+.social-media a {
+    margin-right: 10px;
+}
+
+/* Estilo para a seção de direitos autorais */
+.copyright {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 14px;
 }
 
 
-
 @media only screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-description,
+    .team {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
     header nav ul li,
     footer nav ul li {
         display: block;
