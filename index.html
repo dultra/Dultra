@@ -6,6 +6,18 @@
     <title>Pet Shop</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="shortcut icon" href="https://img.freepik.com/vetores-premium/design-de-logotipo-de-cachorrinho-fofo-de-pet-shop_680355-30.jpg" />
+    <script>
+        function addToCart(productName, productPrice) {
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: productName, price: parseFloat(productPrice.replace('R$', '').trim()) });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Produto adicionado ao carrinho: ' + productName);
+        }
+
+        function goToCheckout() {
+            window.location.href = 'checkout.html';
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -71,46 +83,46 @@
     </section>
 
     <section id="highlight">
-        <h2>Destaques</h2>
-        <div class="highlight-container">
-            <div class="highlight-item">
-                <a href="checkout.html">
-                    <img src="imagens/cama.png" alt="Destaque 1" />
-                    <p>Cama tamanho médio para cachorro</p>
-                    <p>R$ XXX,XX</p>
-                </a>
-            </div>
-            <div class="highlight-item">
-                <a href="checkout.html">
-                    <img src="imagens/oculos.jpg" alt="Destaque 2" />
-                    <p>Óculos muito maneiro pro teu cachorro ou gato!</p>
-                    <p>R$ XX,XX</p>
-                </a>
-            </div>
-            <div class="highlight-item">
-                <a href="checkout.html">
-                    <img src="imagens/racao.jpg" alt="Destaque 3" />
-                    <p>Ração especial premium para cachorro</p>
-                    <p>R$ XXX,XX</p>
-                </a>
-            </div>
-            <div class="highlight-item">
-                <a href="checkout.html">
-                    <img src="imagens/coleira.jpg" alt="Destaque 4" />
-                    <p>Coleira para gatos</p>
-                    <p>R$ XX,XX</p>
-                </a>
-            </div>
-            <div class="highlight-item">
-                <a href="checkout.html">
-                    <img src="imagens/arranhador.jpg" alt="Destaque 5" />
-                    <p>Arranhador para gatos</p>
-                    <p>R$ XXX,XX</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
+      <h2>Destaques</h2>
+      <div class="highlight-container">
+          <div class="highlight-item">
+              <a href="#" onclick="addToCart('Cama tamanho médio para cachorro', 'R$ 99,99');">
+                  <img src="imagens/cama.png" alt="product1" />
+                  <p>Cama tamanho médio para cachorro</p>
+                  <p>R$ 99,99</p>
+              </a>
+          </div>
+          <div class="highlight-item">
+              <a href="#" onclick="addToCart('Óculos muito maneiro pro teu cachorro ou gato!', 'R$ 49,99');">
+                  <img src="imagens/oculos.jpg" alt="product2" />
+                  <p>Óculos muito maneiro pro teu cachorro ou gato!</p>
+                  <p>R$ 49,99</p>
+              </a>
+          </div>
+          <div class="highlight-item">
+              <a href="#" onclick="addToCart('Ração especial premium para cachorro', 'R$ 29,99');">
+                  <img src="imagens/racao.jpg" alt="product3" />
+                  <p>Ração especial premium para cachorro</p>
+                  <p>R$ 29,99</p>
+              </a>
+          </div>
+          <div class="highlight-item">
+              <a href="#" onclick="addToCart('Coleira para gatos', 'R$ 19,99');">
+                  <img src="imagens/coleira.jpg" alt="product4" />
+                  <p>Coleira para gatos</p>
+                  <p>R$ 19,99</p>
+              </a>
+          </div>
+          <div class="highlight-item">
+              <a href="#" onclick="addToCart('Arranhador para gatos', 'R$ 39,99');">
+                  <img src="imagens/arranhador.jpg" alt="product5" />
+                  <p>Arranhador para gatos</p>
+                  <p>R$ 39,99</p>
+              </a>
+          </div>
+      </div>
+<button class="checkout-button" onclick="goToCheckout()">Ir para o Carrinho</button>    
+</section>
     
     <section id="testimonials">
       <h2>Depoimentos</h2>
@@ -214,5 +226,5 @@
       </div>
       <p class="copyright">© 2024 Pet Shop. Todos os direitos reservados.</p>
     </footer>
-  </body>
+</body>
 </html>

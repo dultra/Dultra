@@ -17,17 +17,14 @@
 
     <main>
         <h1>Finalizar Compra</h1>
-        
         <ul id="selected-products"></ul>
-        
         <div class="total">
             <h2>Total</h2>
             <p id="total-price">R$ 0,00</p>
         </div>
-        
         <button class="checkout-button">Finalizar Compra</button>
     </main>
-
+    
     <footer>
         <nav>
             <ul>
@@ -47,6 +44,25 @@
         </div>
     </footer>
 
-    <script src="checkout.js"></script>
+    <script>
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var totalPrice = 0;
+        var selectedProductsList = document.getElementById('selected-products');
+
+        if (cart.length > 0) {
+            cart.forEach(function(product) {
+                var newItem = document.createElement('li');
+                newItem.textContent = product.name + ' - R$ ' + product.price.toFixed(2);
+                selectedProductsList.appendChild(newItem);
+                totalPrice += product.price;
+            });
+        } else {
+            var newItem = document.createElement('li');
+            newItem.textContent = "Nenhum produto no carrinho";
+            selectedProductsList.appendChild(newItem);
+        }
+
+        document.getElementById('total-price').textContent = 'R$ ' + totalPrice.toFixed(2);
+    </script>
 </body>
 </html>
